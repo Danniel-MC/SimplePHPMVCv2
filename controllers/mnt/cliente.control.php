@@ -1,5 +1,6 @@
 <?php
 require_once "models/mnt/clientes.model.php";
+require_once "models/mnt/categorias.model.php";
 
 function run(){
     $viewData["modedsc"]="";
@@ -12,6 +13,8 @@ function run(){
     $viewData["clienteIdNumber"]= "";
     $viewData["clienteBio"]= ""; 
     $viewData["clientStatus"]= "ACT";
+    $viewData["catecod"]=4;//normal
+    $viewData["catecod_cmb"]="";
 
     $viewData["clienteGenero_FEM"]= "selected";
     $viewData["clienteGenero_MAS"]= ""; 
@@ -20,8 +23,8 @@ function run(){
     $viewData["clientStatus_INA"] = "";
 
     $viewData["readOnly"]="";
-
     $viewData=array();
+    
     $modedsc = array(
         "INS"=>"Nuevo Cliente",
         "UPD"=>"Actualizar Cliente %s",
@@ -57,7 +60,8 @@ function run(){
                     $viewData["clienteEmail"],
                     $viewData["clienteIdNumber"],
                     $viewData["clienteBio"], 
-                    $viewData["clientStatus"]
+                    $viewData["clientStatus"],
+                    $viewData["catecod"]
                     
                 );
                 if($result >0){
@@ -73,6 +77,7 @@ function run(){
                     $viewData["clienteIdNumber"],
                     $viewData["clienteBio"], 
                     $viewData["clientStatus"],
+                    $viewData["catecod"],
                     $viewData["clienteId"]
                     
                 );
@@ -88,24 +93,22 @@ function run(){
     } else {
         $clienteDBData = getClientebyId($viewData["clienteId"]);
         mergeFullArrayTo($clienteDBData, $viewData);
-
         $viewData["modedsc"] = sprintf($modedsc[$viewData["mode"]], $viewData["clienteName"]);
-        
-        $viewData["clienteGenero_FEM"]= ($viewData["clienteGenero"] == "FEM")?"selected":"";
-        $viewData["clienteGenero_MAS"]= ($viewData["clienteGenero"] == "MAS")?"selected":"";
 
-        $viewData["clientStatus_ACT"]= ($viewData["clientStatus"] == "ACT")?"selected":"";
-        $viewData["clientStatus_INA"]= ($viewData["clientStatus"] == "INA")?"selected":"";
+        $viewData["clienteGenero_FEM"] = ($viewData["clienteGenero"]=="FEM")?"selected":"";
+        $viewData["clienteGenero_MAS"] = ($viewData["clienteGenero"]=="MAS")?"selected":"";
 
-        if ($viewData["readOnly"] != "UPD"){
-            $viewData["readOnly"] = "readOnly";
+        $viewData["clientstatus_ACT"] = ($viewData["clientstatus"] == "ACT") ? "selected" : "";
+        $viewData["clientstatus_INA"] = ($viewData["clientstatus"] == "INA") ? "selected" : ""; 
+        // Sacar la data de la DB
+        if ($viewData["mode"] != 'UPD') {
+            $viewData["readonly"] = "readonly";
         }
-        //sacar data de la DB 
+        
     }
 
-    //crear un token que guarda la sesion unico. 
 
-    // Crear un token unico
+    
     // Guardar en sesión ese token unico para su verificación posterior
     $viewData["xsstoken"] = uniqid("cln", true);
     $_SESSION["cln_csstoken"] = $viewData["xsstoken"];

@@ -45,6 +45,7 @@
             <a class="btn depth-1 s-margin" href="index.php?page=categoria&mode=DSP&catecod={{catecod}}"><span class="ion-eye"j></a>&nbsp;      
         </td>
     </tr>
+    
     {{endfor categorias}}
     </tbody>
     <tfoot>

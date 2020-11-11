@@ -1,0 +1,1 @@
+ALTER TABLE `clientes` ADD `catecod` BIGINT(10) NOT NULL AFTER `clientUserCreates`;

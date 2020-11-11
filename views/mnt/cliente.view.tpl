@@ -39,9 +39,17 @@
         <div>
             <label for="clientStatus">Estado</label>
             <select name="clientStatus" id="clientStatus" {{readOnly}} >
-                <option value="ACT" {{clientStatus_ACT}}>Activo</option>
-                <option value="INA" {{clientStatus_INA}}>Inactivo</option>
+                <option value="ACT" {{clienteStatus_ACT}}>Activo</option>
+                <option value="INA" {{clienteStatus_INA}}>Inactivo</option>
             </select>         
+        </div>
+        <div>
+            <label for="catecod">Categoria</label>
+            <select name="catecod" id="catecod" {{readonly}}>
+                {{foreach catecod_cmb}}
+                    <option value="{{catecod}}" {{selected}}>{{catenom}}</option>
+                {{endfor catecod_cmb}}
+            </select>                  
         </div>
         <button id="btnsubmit" type="submit" name="btnsubmit">Enviar</button>
         <button id="btncancel">Cancelar</button>
