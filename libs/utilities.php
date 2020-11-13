@@ -305,7 +305,7 @@ function exportSimpleExcelFile($dataArray)
     $sep = "\t";
     //encabezados
     foreach ($dataArray[0] as $header=>$value) {
-          print $header.$sep;
+            print $header.$sep;
     }
     print("\n");
     //contenido
@@ -354,7 +354,7 @@ function exportRealExcelFile($dataArray)
      * @version   ##VERSION##, ##DATE##
      */
     
-     error_reporting(E_ALL);
+    error_reporting(E_ALL);
     ini_set('display_errors', true);
     ini_set('display_startup_errors', true);
     date_default_timezone_set('America/Tegucigalpa');

@@ -6,19 +6,19 @@
         <input type="hidden" name="xsstoken" value="{{xsstoken}}">
         <div>
             <label for="clienteName">Nombre del Cliente</label>
-            <input {{readOnly}} type="text" name="clienteName" id="clienteName" value="{{clienteName}}" placeholder="Nombre del cliente">       
+            <input {{readonly}} type="text" name="clienteName" id="clienteName" value="{{clienteName}}" placeholder="Nombre del cliente">       
         </div>
 
         <div>
             <label for="clienteGenero">Genero</label>
-            <select   name="clienteGenero" id="clienteGenero" {{readOnly}} >   
+            <select   name="clienteGenero" id="clienteGenero" {{readonly}} >   
                 <option value="FEM" {{clienteGenero_FEM}}>Femenino</option>
                 <option value="MAS" {{clienteGenero_MAS}}>Masculino</option>
             </select>    
         </div>
         <div>
             <label for="clientePhone">Telefono</label>
-            <input {{readOnly}} type="text" name="clientePhone" id="clientePhone" value="{{clientePhone}}" placeholder="Telefono">       
+            <input {{readonly}} type="text" name="clientePhone" id="clientePhone" value="{{clientePhone}}" placeholder="Telefono">       
         </div>
 
         <div>
@@ -28,17 +28,17 @@
 
         <div>
             <label for="clienteIdNumber">Numero Identificacion</label>
-            <input {{readOnly}} type="text" name="clienteIdNumber" id="clienteIdNumber" value="{{clienteIdNumber}}" placeholder="Numero Identificacion">       
+            <input {{readonly}} type="text" name="clienteIdNumber" id="clienteIdNumber" value="{{clienteIdNumber}}" placeholder="Numero Identificacion">       
         </div>
 
         <div>
             <label for="clienteBio">Biografia</label>
-            <input {{readOnly}} type="text"  name="clienteBio" id="clienteBio" value="{{clienteBio}}" placeholder="Biografia resumen">       
+            <input {{readonly}} type="text"  name="clienteBio" id="clienteBio" value="{{clienteBio}}" placeholder="Biografia resumen">       
         </div>
 
         <div>
             <label for="clientStatus">Estado</label>
-            <select name="clientStatus" id="clientStatus" {{readOnly}} >
+            <select name="clientStatus" id="clientStatus" {{readonly}} >
                 <option value="ACT" {{clienteStatus_ACT}}>Activo</option>
                 <option value="INA" {{clienteStatus_INA}}>Inactivo</option>
             </select>         

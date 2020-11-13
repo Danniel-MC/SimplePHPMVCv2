@@ -8,6 +8,14 @@ function getAllClientes(){
     $resultSet = obtenerRegistros($sqlstr);
     return $resultSet;
 }
+
+function getCountClientes(){
+  $sqlstr = "SELECT count(*) as Clientes from clientes;";
+  $resultSet = array();           
+  $resultSet = obtenerunRegistro($sqlstr);
+  return $resultSet;
+}
+
 function getclientesActivas()
 {
     $sqlstr = "SELECT * from clientes where clientStatus = 'ACT';";

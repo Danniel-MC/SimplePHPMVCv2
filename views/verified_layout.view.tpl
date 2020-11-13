@@ -18,11 +18,11 @@
                 <ul>
                     {{if notifnum}}
                     <li><a href="index.php?page=notificacion">
-                      <span class="ion-android-notifications">&nbsp;{{notifnum}}</span></a>
+                    <span class="ion-android-notifications">&nbsp;{{notifnum}}</span></a>
                     </li>
                     {{endif notifnum}}
                     {{foreach appmenu}}
-                      <li><a href="index.php?page={{mdlprg}}">{{mdldsc}}</a></li>
+                    <li><a href="index.php?page={{mdlprg}}">{{mdldsc}}</a></li>
                     {{endfor appmenu}}
                     <li><a href="index.php?page=logout">Cerrar Sesión</a></li>
                 </ul>
@@ -33,19 +33,19 @@
             </div>
 
             <div class="footer">
-                Derechos Reservados 202
+               {{footer_general}}
             </div>
             {{foreach js_ref}}
                 <script src="{{uri}}"></script>
             {{endfor js_ref}}
             <script>
-              $().ready(function(e){
-                $(".hbtn").click(function(e){
-                  e.preventDefault();
-                  e.stopPropagation();
-                  $(".menu").toggleClass('open');
-                  });
-              });
+                $().ready(function(e){
+                    $(".hbtn").click(function(e){
+                    e.preventDefault();
+                    e.stopPropagation();
+                    $(".menu").toggleClass('open');
+                });
+            });
             </script>
         </body>
     </html>

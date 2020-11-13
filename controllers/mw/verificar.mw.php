@@ -3,14 +3,14 @@
 
     function mw_estaLogueado(){
         if( isset($_SESSION["userLogged"]) && $_SESSION["userLogged"] == true){
-          return true;
+            return true;
         }else{
-          $_SESSION["userLogged"] = false;
-          $_SESSION["userCode"] = "";
-          $_SESSION["userScreenName"] = "";
-          $_SESSION["userEmail"] = "";
-          $_SESSION["userType"] = "";
-          return false;
+            $_SESSION["userLogged"] = false;
+            $_SESSION["userCode"] = "";
+            $_SESSION["userScreenName"] = "";
+            $_SESSION["userEmail"] = "";
+            $_SESSION["userType"] = "";
+            return false;
         }
     }
     function mw_setEstaLogueado($usuario, $nombre, $email,$tipo, $logueado){

@@ -31,7 +31,10 @@
             Correo
         </th>
         <th>
-            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=INS&clientid=0"><span class="ion-plus-circled"></span></a>
+            Comunicaciones
+        </th>
+        <th>
+            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=INS&clienteId=0"><span class="ion-plus-circled"></span></a>
         </th>
     </tr>
     </thead>
@@ -51,8 +54,11 @@
             {{clienteEmail}}
         </td>
         <td class="center">
-            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=UPD&clientid={{clienteId}}"><span class="ion-edit"></a> &nbsp;
-            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=DSP&clientid={{clienteId}}"><span class="ion-eye"></a>&nbsp;
+            <a class="btn depth-1 s-margin" href="index.php?page=comunicaciones"><span class="ion-email"></a>&nbsp;
+        </td>
+        <td class="center">
+            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=UPD&clienteId={{clienteId}}"><span class="ion-edit"></a> &nbsp;
+            <a class="btn depth-1 s-margin" href="index.php?page=cliente&mode=DSP&clienteId={{clienteId}}"><span class="ion-eye"></a>&nbsp;
             
         </td>
         </tr>
